@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataStructure"
+    targetNamespace="http://tempuri.org/DataStructure.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/DataStructure.xsd"
+    xmlns:mstns="http://tempuri.org/DataStructure.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="MyApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="ApplicationDate"/>
+        <xs:element type="xs:string" name="CreatedOn"/>
+        <xs:element type="xs:string" name="ModifiedOn"/>
+        <xs:element type="xs:string" name="Company"/>
+        <xs:element type="xs:string" name="Title"/>
+        <xs:element type="xs:string" name="Advertisement"/>
+        <xs:element type="xs:string" name="Url"/>
+        <xs:element type="xs:string" name="Advertiser"/>
+        <xs:element type="xs:string" name="AppliedCVBinary"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>  
+</xs:schema>

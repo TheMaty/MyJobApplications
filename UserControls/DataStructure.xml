@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MyApplication>
+  <ApplicationdDate></ApplicationdDate>
+  <CreatedOn></CreatedOn>
+  <ModifiedOn></ModifiedOn>
+  <Company></Company>
+  <Title></Title>
+  <Advertisement></Advertisement>
+  <Url></Url>
+  <Advertiser></Advertiser>
+  <AppliedCVBinary></AppliedCVBinary>
+</MyApplication>
