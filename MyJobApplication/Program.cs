@@ -16,7 +16,8 @@ namespace MyJobApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new JobApplicationForm());
+            //Application.Run(new MyJobApplications());
+            Application.Run(new MainApplicationForm());
         }
     }
 }

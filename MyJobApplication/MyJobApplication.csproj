@@ -50,7 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications.Designer.cs">
+      <DependentUpon>Applications.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataStoreLayer.cs" />
+    <Compile Include="DisplayApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayApplicationForm.Designer.cs">
+      <DependentUpon>DisplayApplicationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisplayBodyOfAdvertisement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,11 +75,17 @@
     <Compile Include="DisplayCV.Designer.cs">
       <DependentUpon>DisplayCV.cs</DependentUpon>
     </Compile>
-    <Compile Include="DisplayJobApplication.cs">
+    <Compile Include="JobApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DisplayJobApplication.Designer.cs">
-      <DependentUpon>DisplayJobApplication.cs</DependentUpon>
+    <Compile Include="JobApplicationForm.Designer.cs">
+      <DependentUpon>JobApplicationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainApplicationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainApplicationForm.Designer.cs">
+      <DependentUpon>MainApplicationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyJobApplications.cs">
       <SubType>Form</SubType>
@@ -77,14 +95,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TreeViewForm.Designer.cs">
+      <DependentUpon>TreeViewForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Applications.resx">
+      <DependentUpon>Applications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayApplicationForm.resx">
+      <DependentUpon>DisplayApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayBodyOfAdvertisement.resx">
       <DependentUpon>DisplayBodyOfAdvertisement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayCV.resx">
       <DependentUpon>DisplayCV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DisplayJobApplication.resx">
-      <DependentUpon>DisplayJobApplication.cs</DependentUpon>
+    <EmbeddedResource Include="JobApplicationForm.resx">
+      <DependentUpon>JobApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainApplicationForm.resx">
+      <DependentUpon>MainApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyJobApplications.resx">
       <DependentUpon>MyJobApplications.cs</DependentUpon>
@@ -98,6 +131,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TreeViewForm.resx">
+      <DependentUpon>TreeViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

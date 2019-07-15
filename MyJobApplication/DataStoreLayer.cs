@@ -19,7 +19,20 @@ namespace MyJobApplication
         public string url;
         public string advertiser;
         public byte[] AppliedCVBinary;
-    }    
+    }
+
+    public struct jobActivity
+    {
+        public DateTime activityDate;
+        public DateTime createdOn;
+        public DateTime modifiedOn;
+        public string title;
+        public string body;
+        public string regarding;
+        public string contact;
+        public string type;
+    }
+
 
     public class DataStoreLayer
     {
@@ -46,16 +59,47 @@ namespace MyJobApplication
         }
 
         /// <summary>
+        /// Saves to an xml file
+        /// </summary>
+        /// <param name="jobActivity">Strcut of the jobApplication</param>
+        public bool InsertActivity(jobActivity jobAct)
+        {
+            using (var writer = new System.IO.StreamWriter(dbFilePath + "\\" + jobAct.activityDate.ToString("yyyyMMddhhmm") +
+                "_" +
+                jobAct.type + "_" + jobAct.contact + ".xml", true))
+            {
+                var serializer = new XmlSerializer(jobAct.GetType());
+                serializer.Serialize(writer, jobAct);
+                writer.Flush();
+            }
+            return true;
+        }
+
+        /// <summary>
         /// Load an object from an xml file
         /// </summary>
         /// <param name="FileName">Xml file name</param>
         /// <returns>The object created from the xml file</returns>
-        public jobApplication Load(string FileName)
+        public jobApplication LoadJobApplication(string FileName)
         {
             using (var stream = System.IO.File.OpenRead(FileName))
             {
                 var serializer = new XmlSerializer(typeof(jobApplication));
                 return (jobApplication) serializer.Deserialize(stream);
+            }
+        }
+
+        /// <summary>
+        /// Load an object from an xml file
+        /// </summary>
+        /// <param name="FileName">Xml file name</param>
+        /// <returns>The object created from the xml file</returns>
+        public jobActivity LoadJobActivity(string FileName)
+        {
+            using (var stream = System.IO.File.OpenRead(FileName))
+            {
+                var serializer = new XmlSerializer(typeof(jobApplication));
+                return (jobActivity)serializer.Deserialize(stream);
             }
         }
     }

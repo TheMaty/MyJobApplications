@@ -13,11 +13,11 @@ using System.Xml.Linq;
 
 namespace MyJobApplication
 {
-    public partial class JobApplicationForm : Form
+    public partial class MyJobApplications : Form
     {
         private string dbFilePath => ConfigurationManager.AppSettings["DBFile"];
 
-        public JobApplicationForm()
+        public MyJobApplications()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace MyJobApplication
                     switch (mainTreeView.SelectedNode.Name)
                     {
                         case "MyApplications":
-                            DisplayJobApplication jobApp = new DisplayJobApplication();
+                            JobApplicationForm jobApp = new JobApplicationForm();
                             jobApp.Show(this);
                             break;
                         case "Companies":
@@ -93,7 +93,7 @@ namespace MyJobApplication
             }
         }
 
-        private void listView1_DoubleClick(object sender, EventArgs e)
+        private void listViewApplications_DoubleClick(object sender, EventArgs e)
         {
             Point mousePosition = listViewApplications.PointToClient(Control.MousePosition);
             ListViewHitTestInfo hit = listViewApplications.HitTest(mousePosition);

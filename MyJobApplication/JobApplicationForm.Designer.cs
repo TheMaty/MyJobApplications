@@ -1,6 +1,6 @@
 ﻿namespace MyJobApplication
 {
-    partial class DisplayJobApplication
+    partial class JobApplicationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -210,6 +210,8 @@
             // 
             // txtContact
             // 
+            this.txtContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtContact.Location = new System.Drawing.Point(112, 184);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(628, 22);
@@ -217,12 +219,14 @@
             // 
             // txtCompany
             // 
+            this.txtCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCompany.Location = new System.Drawing.Point(112, 141);
             this.txtCompany.Name = "txtCompany";
             this.txtCompany.Size = new System.Drawing.Size(628, 22);
             this.txtCompany.TabIndex = 1;
             // 
-            // DisplayJobApplication
+            // JobApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,8 +254,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DisplayJobApplication";
-            this.Text = "Display Job Application";
+            this.Name = "JobApplicationForm";
+            this.Text = "Job Application Form";
+            this.Load += new System.EventHandler(this.JobApplicationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

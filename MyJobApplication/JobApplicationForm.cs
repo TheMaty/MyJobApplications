@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace MyJobApplication
 {
-    public partial class DisplayJobApplication : Form
+    public partial class JobApplicationForm : Form
     {
-        public DisplayJobApplication()
+        public JobApplicationForm()
         {
             InitializeComponent();
         }
@@ -47,7 +47,7 @@ namespace MyJobApplication
             ds.InsertApplication(jb);
 
             MessageBox.Show("Record has been added successfully");
-            ((JobApplicationForm)this.Owner).RefreshListView();
+            ((MyJobApplications)this.Owner).RefreshListView();
             this.Close();
             
         }
@@ -77,6 +77,22 @@ namespace MyJobApplication
             }
 
         }
-        
+
+        private void JobApplicationForm_Load(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection dataCompany = new AutoCompleteStringCollection();
+            foreach (string str in ((TreeViewForm)this.MdiParent.MdiChildren[0]).Companies)
+            {
+                dataCompany.Add(str);
+            }
+            txtCompany.AutoCompleteCustomSource = dataCompany;
+
+            AutoCompleteStringCollection dataContact = new AutoCompleteStringCollection();
+            foreach (string str in ((TreeViewForm)this.MdiParent.MdiChildren[0]).Contacts)
+            {
+                dataContact.Add(str);
+            }
+            txtContact.AutoCompleteCustomSource = dataContact;
+        }
     }
 }
