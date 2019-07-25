@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jobActivity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <activityDate>2019-07-17T12:46:12.137539+01:00</activityDate>
+  <createdOn>2019-07-17T12:47:14.5904538+01:00</createdOn>
+  <modifiedOn>2019-07-17T12:47:14.5894525+01:00</modifiedOn>
+  <title>fyi message</title>
+  <body>Hello Dilan,
+I have dropped an email to Chester for the position of "Microsoft Dynamics CRM Solution Architect" as you posted in your LinkedIn account.
+
+fyi..
+regards,
+Muhammet ATALAY</body>
+  <regarding>Microsoft Dynamics CRM Solution Architect</regarding>
+  <contact>Dilan Patel</contact>
+  <type>LinkedIn Message</type>
+</jobActivity>

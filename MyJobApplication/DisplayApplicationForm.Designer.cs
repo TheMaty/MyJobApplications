@@ -35,7 +35,6 @@
             this.txtURL = new System.Windows.Forms.TextBox();
             this.lblURL = new System.Windows.Forms.Label();
             this.lblDetails = new System.Windows.Forms.Label();
-            this.txtBody = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dateTimePickerModifiedOn = new System.Windows.Forms.DateTimePicker();
@@ -45,6 +44,7 @@
             this.lblAppliedOn = new System.Windows.Forms.Label();
             this.dateTimePickerAppliedOn = new System.Windows.Forms.DateTimePicker();
             this.officeViewer1 = new Spire.OfficeViewer.Forms.OfficeViewer();
+            this.txtBody = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // txtCompany
@@ -110,16 +110,6 @@
             this.lblDetails.Size = new System.Drawing.Size(40, 17);
             this.lblDetails.TabIndex = 112;
             this.lblDetails.Text = "Body";
-            // 
-            // txtBody
-            // 
-            this.txtBody.Enabled = false;
-            this.txtBody.Location = new System.Drawing.Point(136, 361);
-            this.txtBody.Multiline = true;
-            this.txtBody.Name = "txtBody";
-            this.txtBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtBody.Size = new System.Drawing.Size(628, 365);
-            this.txtBody.TabIndex = 106;
             // 
             // txtTitle
             // 
@@ -200,11 +190,22 @@
             this.officeViewer1.TabIndex = 120;
             this.officeViewer1.Text = "officeViewer1";
             // 
+            // txtBody
+            // 
+            this.txtBody.Location = new System.Drawing.Point(136, 361);
+            this.txtBody.Name = "txtBody";
+            this.txtBody.Size = new System.Drawing.Size(628, 365);
+            this.txtBody.TabIndex = 121;
+            this.txtBody.Text = "";
+            // 
             // DisplayApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1900, 754);
+            this.Controls.Add(this.txtBody);
             this.Controls.Add(this.officeViewer1);
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.txtContact);
@@ -213,7 +214,6 @@
             this.Controls.Add(this.txtURL);
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.txtBody);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dateTimePickerModifiedOn);
@@ -222,7 +222,6 @@
             this.Controls.Add(this.lblCreatedOn);
             this.Controls.Add(this.lblAppliedOn);
             this.Controls.Add(this.dateTimePickerAppliedOn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DisplayApplicationForm";
@@ -245,7 +244,6 @@
         private System.Windows.Forms.TextBox txtURL;
         private System.Windows.Forms.Label lblURL;
         private System.Windows.Forms.Label lblDetails;
-        private System.Windows.Forms.TextBox txtBody;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DateTimePicker dateTimePickerModifiedOn;
@@ -255,5 +253,6 @@
         private System.Windows.Forms.Label lblAppliedOn;
         private System.Windows.Forms.DateTimePicker dateTimePickerAppliedOn;
         private Spire.OfficeViewer.Forms.OfficeViewer officeViewer1;
+        private System.Windows.Forms.RichTextBox txtBody;
     }
 }

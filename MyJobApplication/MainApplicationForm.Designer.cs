@@ -38,6 +38,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainApplicationForm";
             this.Text = "My Job Applications";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainApplicationForm_Load);
             this.MdiChildActivate += new System.EventHandler(this.MainApplicationForm_MdiChildActivate);
             this.Resize += new System.EventHandler(this.MainApplicationForm_Resize);

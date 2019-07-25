@@ -36,7 +36,6 @@
             this.dateTimePickerModifiedOn = new System.Windows.Forms.DateTimePicker();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtBody = new System.Windows.Forms.TextBox();
             this.lblDetails = new System.Windows.Forms.Label();
             this.lblURL = new System.Windows.Forms.Label();
             this.txtURL = new System.Windows.Forms.TextBox();
@@ -48,11 +47,11 @@
             this.lblContact = new System.Windows.Forms.Label();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.txtCompany = new System.Windows.Forms.TextBox();
+            this.txtBody = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // dateTimePickerAppliedOn
             // 
-            this.dateTimePickerAppliedOn.Enabled = false;
             this.dateTimePickerAppliedOn.Location = new System.Drawing.Point(112, 12);
             this.dateTimePickerAppliedOn.Name = "dateTimePickerAppliedOn";
             this.dateTimePickerAppliedOn.Size = new System.Drawing.Size(628, 22);
@@ -119,15 +118,6 @@
             this.txtTitle.Size = new System.Drawing.Size(630, 72);
             this.txtTitle.TabIndex = 4;
             // 
-            // txtBody
-            // 
-            this.txtBody.Location = new System.Drawing.Point(109, 425);
-            this.txtBody.Multiline = true;
-            this.txtBody.Name = "txtBody";
-            this.txtBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtBody.Size = new System.Drawing.Size(630, 365);
-            this.txtBody.TabIndex = 6;
-            // 
             // lblDetails
             // 
             this.lblDetails.AutoSize = true;
@@ -182,7 +172,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(715, 808);
+            this.btnSave.Location = new System.Drawing.Point(664, 808);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -226,11 +216,22 @@
             this.txtCompany.Size = new System.Drawing.Size(628, 22);
             this.txtCompany.TabIndex = 1;
             // 
+            // txtBody
+            // 
+            this.txtBody.Location = new System.Drawing.Point(112, 422);
+            this.txtBody.Name = "txtBody";
+            this.txtBody.Size = new System.Drawing.Size(625, 380);
+            this.txtBody.TabIndex = 101;
+            this.txtBody.Text = "";
+            // 
             // JobApplicationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 843);
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(749, 838);
+            this.Controls.Add(this.txtBody);
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.txtContact);
             this.Controls.Add(this.lblContact);
@@ -242,7 +243,6 @@
             this.Controls.Add(this.txtURL);
             this.Controls.Add(this.lblURL);
             this.Controls.Add(this.lblDetails);
-            this.Controls.Add(this.txtBody);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dateTimePickerModifiedOn);
@@ -251,10 +251,11 @@
             this.Controls.Add(this.lblCreatedOn);
             this.Controls.Add(this.lblAppliedOn);
             this.Controls.Add(this.dateTimePickerAppliedOn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "JobApplicationForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Job Application Form";
             this.Load += new System.EventHandler(this.JobApplicationForm_Load);
             this.ResumeLayout(false);
@@ -272,7 +273,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerModifiedOn;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.TextBox txtBody;
         private System.Windows.Forms.Label lblDetails;
         private System.Windows.Forms.Label lblURL;
         private System.Windows.Forms.TextBox txtURL;
@@ -284,5 +284,6 @@
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.TextBox txtCompany;
+        private System.Windows.Forms.RichTextBox txtBody;
     }
 }

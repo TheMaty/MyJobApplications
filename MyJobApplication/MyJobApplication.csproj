@@ -75,6 +75,12 @@
     <Compile Include="DisplayCV.Designer.cs">
       <DependentUpon>DisplayCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="JobActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobActivityForm.Designer.cs">
+      <DependentUpon>JobActivityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="JobApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayCV.resx">
       <DependentUpon>DisplayCV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobActivityForm.resx">
+      <DependentUpon>JobActivityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JobApplicationForm.resx">
       <DependentUpon>JobApplicationForm.cs</DependentUpon>

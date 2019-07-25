@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,7 +28,7 @@ namespace MyJobApplication
 
         }
 
-        private void MainApplicationForm_Resize(object sender, EventArgs e)
+        public void MainApplicationForm_Resize(object sender, EventArgs e)
         {
             if (this.MdiChildren.Length > 0 && this.MdiChildren[0] is TreeViewForm )
                 this.MdiChildren[0].Size = new Size(this.MdiChildren[0].Width, this.Height);

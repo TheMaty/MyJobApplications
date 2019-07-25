@@ -21,9 +21,11 @@ namespace MyJobApplication
 
         public List<string> Companies = new List<string>();
         public List<string> Contacts = new List<string>();
+        public List<string> Applications = new List<string>();
 
         public TreeViewForm()
         {
+            int nodeLength = 0;
             InitializeComponent();
 
             records = Directory.GetFiles(dbFilePath);
@@ -34,10 +36,13 @@ namespace MyJobApplication
                 foreach (var dm in doc.Descendants("jobApplication"))
                 {
                     mainTreeView.Nodes[0].Nodes[0].Nodes.Add(new TreeNode() { Text = dm.Element("title").Value, Name = dm.Element("company").Value + "_" + dm.Element("title").Value });
+                    nodeLength = dm.Element("title").Value.Length > nodeLength ? dm.Element("title").Value.Length : nodeLength;
+                    Applications.Add(dm.Element("title").Value);
 
                     if (!mainTreeView.Nodes[0].Nodes[1].Nodes.ContainsKey(dm.Element("company").Value))
                     {
                         mainTreeView.Nodes[0].Nodes[1].Nodes.Add(new TreeNode() { Text = dm.Element("company").Value, Name = dm.Element("company").Value });
+                        nodeLength = dm.Element("company").Value.Length > nodeLength ? dm.Element("company").Value.Length : nodeLength;
                         //add company filter to jobApplications so
                         //select all jobApplications for active company
                         string[] filteredApplicationsByCompanies = Array.FindAll(records, x => x.Contains(dm.Element("company").Value));
@@ -55,6 +60,7 @@ namespace MyJobApplication
                     if (dm.Element("advertiser").Value != "No Contact" && dm.Element("advertiser").Value != "N/A" && !mainTreeView.Nodes[0].Nodes[2].Nodes.ContainsKey(dm.Element("advertiser").Value))
                     {
                         mainTreeView.Nodes[0].Nodes[2].Nodes.Add(new TreeNode() { Text = dm.Element("advertiser").Value, Name = dm.Element("advertiser").Value });
+                        nodeLength = dm.Element("advertiser").Value.Length > nodeLength ? dm.Element("advertiser").Value.Length : nodeLength;
                         //add company filter to jobApplications so
                         //select all jobApplications for active company
                         string[] filteredApplicationsByCompanies = Array.FindAll(records, x => x.Contains(dm.Element("company").Value));
@@ -70,7 +76,32 @@ namespace MyJobApplication
                         Contacts.Add(dm.Element("advertiser").Value);
                     }
                 }
+
+                foreach (var dm in doc.Descendants("jobActivity"))
+                {
+                    //check dublicate control
+                    if (!mainTreeView.Nodes[0].Nodes[3].Nodes[0].Nodes.ContainsKey(Path.GetFileNameWithoutExtension(dataFile)))
+                    {
+                        mainTreeView.Nodes[0].Nodes[3].Nodes[0].Nodes.Add(new TreeNode() { Text = Path.GetFileNameWithoutExtension(dataFile), Name = Path.GetFileNameWithoutExtension(dataFile) });
+                        nodeLength = Path.GetFileNameWithoutExtension(dataFile).Length > nodeLength ? Path.GetFileNameWithoutExtension(dataFile).Length : nodeLength;
+                    }
+
+                    if (dm.Element("regarding").Value != "" && !mainTreeView.Nodes[0].Nodes[3].Nodes[1].Nodes.ContainsKey(dm.Element("regarding").Value))
+                    {
+                        mainTreeView.Nodes[0].Nodes[3].Nodes[1].Nodes.Add(new TreeNode() { Text = dm.Element("regarding").Value, Name = dm.Element("regarding").Value });
+                        nodeLength = dm.Element("regarding").Value.Length > nodeLength ? dm.Element("regarding").Value.Length : nodeLength;
+                    }
+
+                    //check dublicate control
+                    if (!mainTreeView.Nodes[0].Nodes[3].Nodes[2].Nodes.ContainsKey(dm.Element("contact").Value))
+                    {
+                        mainTreeView.Nodes[0].Nodes[3].Nodes[2].Nodes.Add(new TreeNode() { Text = dm.Element("contact").Value, Name = dm.Element("contact").Value });
+                        nodeLength = dm.Element("contact").Value.Length > nodeLength ? dm.Element("contact").Value.Length : nodeLength;
+                    }
+
+                    }
             }
+
         }
 
         private void mainTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -116,9 +147,15 @@ namespace MyJobApplication
                     case "Contacts":
                         break;
                     case "Activities":
+                        JobActivityForm jobAct = new JobActivityForm();
+                        if (this.MdiParent.MdiChildren.Length > 1)
+                            this.MdiParent.MdiChildren[1].Close();
+                        jobAct.MdiParent = this.MdiParent;
+                        jobAct.Show();
                         break;
                 }
             }
         }
+
     }
 }

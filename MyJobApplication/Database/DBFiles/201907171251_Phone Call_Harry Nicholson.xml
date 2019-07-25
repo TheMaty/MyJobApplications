@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jobActivity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <activityDate>2019-07-17T12:51:02.3306624+01:00</activityDate>
+  <createdOn>2019-07-17T12:51:51.0208089+01:00</createdOn>
+  <modifiedOn>2019-07-17T12:51:51.0208089+01:00</modifiedOn>
+  <title>I summarize my history</title>
+  <body>20 minutes call.
+
+We will regularly keep in touch for any positions.</body>
+  <regarding />
+  <contact>Harry Nicholson</contact>
+  <type>Phone Call</type>
+</jobActivity>

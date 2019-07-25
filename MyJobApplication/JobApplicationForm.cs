@@ -25,7 +25,7 @@ namespace MyJobApplication
 
             jb.createdOn = DateTime.Now;
             jb.modifiedOn = DateTime.Now;
-            jb.applicationDate = DateTime.Now;
+            jb.applicationDate = dateTimePickerAppliedOn.Value;
             jb.advertisement = txtBody.Text;
             jb.advertiser = txtContact.Text;
 
@@ -47,7 +47,6 @@ namespace MyJobApplication
             ds.InsertApplication(jb);
 
             MessageBox.Show("Record has been added successfully");
-            ((MyJobApplications)this.Owner).RefreshListView();
             this.Close();
             
         }
