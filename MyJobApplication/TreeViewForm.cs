@@ -120,11 +120,11 @@ namespace MyJobApplication
                             return;
                         }
                         appForm.DataFile = Array.FindAll(records, x => x.Contains(e.Node.Name))[0];
-                        if (this.MdiParent.MdiChildren.Length > 1)
-                            this.MdiParent.MdiChildren[1].Close();
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
                         appForm.MdiParent = this.MdiParent;
                         appForm.Show();
-                        this.MdiParent.MdiChildren[1].Activate();
+                        this.MdiParent.MdiChildren[2].Activate();
                         break;
                     case "Activities":
                         break;
@@ -137,8 +137,8 @@ namespace MyJobApplication
                 {
                     case "Applications":
                         JobApplicationForm jobApp = new JobApplicationForm();
-                        if (this.MdiParent.MdiChildren.Length > 1)
-                            this.MdiParent.MdiChildren[1].Close();
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
                         jobApp.MdiParent = this.MdiParent;
                         jobApp.Show();
                         break;
@@ -148,8 +148,8 @@ namespace MyJobApplication
                         break;
                     case "Activities":
                         JobActivityForm jobAct = new JobActivityForm();
-                        if (this.MdiParent.MdiChildren.Length > 1)
-                            this.MdiParent.MdiChildren[1].Close();
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
                         jobAct.MdiParent = this.MdiParent;
                         jobAct.Show();
                         break;

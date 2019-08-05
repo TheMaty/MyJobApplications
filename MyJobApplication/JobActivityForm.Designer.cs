@@ -210,6 +210,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(735, 775);
+            this.ControlBox = false;
             this.Controls.Add(this.txtBody);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbType);
@@ -232,7 +233,7 @@
             this.Name = "JobActivityForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "JobActivityForm";
+            this.Text = "Job Activity Form";
             this.Load += new System.EventHandler(this.JobActivityForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

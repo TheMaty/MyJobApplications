@@ -205,6 +205,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1900, 754);
+            this.ControlBox = false;
             this.Controls.Add(this.txtBody);
             this.Controls.Add(this.officeViewer1);
             this.Controls.Add(this.txtCompany);

@@ -231,6 +231,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(749, 838);
+            this.ControlBox = false;
             this.Controls.Add(this.txtBody);
             this.Controls.Add(this.txtCompany);
             this.Controls.Add(this.txtContact);
