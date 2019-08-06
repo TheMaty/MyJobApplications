@@ -102,9 +102,9 @@ namespace MyJobApplication
             switch (columnindex)
             {
                 case 5: // Body of Advertisement
-                    DisplayBodyOfAdvertisementForm displayBodyOfAdvertisementForm = new DisplayBodyOfAdvertisementForm();
-                    displayBodyOfAdvertisementForm.Body = listViewApplications.SelectedItems[0].SubItems[columnindex].Text;
-                    displayBodyOfAdvertisementForm.ShowDialog(this);
+                    DisplayBodyForm DisplayBodyForm = new DisplayBodyForm();
+                    DisplayBodyForm.Body = listViewApplications.SelectedItems[0].SubItems[columnindex].Text;
+                    DisplayBodyForm.ShowDialog(this);
                     break;
                 case 6: //CV
                     DisplayCV displayCV = new DisplayCV();

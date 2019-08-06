@@ -143,7 +143,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.SplitContainer splitContainerMain;
         private System.Windows.Forms.DataGridView dataGridViewCompany;
-        private new System.Windows.Forms.DataGridViewTextBoxColumn AccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountName;
         private System.Windows.Forms.DataGridViewTextBoxColumn URL;
     }
 }

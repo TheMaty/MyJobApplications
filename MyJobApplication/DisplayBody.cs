@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace MyJobApplication
 {
-    public partial class DisplayBodyOfAdvertisementForm : Form
+    public partial class DisplayBodyForm : Form
     {
         public string Body;
-        public DisplayBodyOfAdvertisementForm()
+        public DisplayBodyForm()
         {
             InitializeComponent();           
         }
 
-        private void DisplayBodyOfAdvertisementForm_Load(object sender, EventArgs e)
+        private void DisplayBodyForm_Load(object sender, EventArgs e)
         {
             richTextBox1.Text = Body;
         }

@@ -99,9 +99,8 @@ namespace MyJobApplication
                         nodeLength = dm.Element("contact").Value.Length > nodeLength ? dm.Element("contact").Value.Length : nodeLength;
                     }
 
-                    }
+                }
             }
-
         }
 
         private void mainTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -126,7 +125,14 @@ namespace MyJobApplication
                         appForm.Show();
                         this.MdiParent.MdiChildren[2].Activate();
                         break;
-                    case "Activities":
+                    case string d when d.Contains("My Job Applications\\Activities\\Activities"):
+                        Activities actForm = new Activities(records);
+
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
+                        actForm.MdiParent = this.MdiParent;
+                        actForm.Show();
+                        this.MdiParent.MdiChildren[2].Activate();
                         break;
                 }
             }

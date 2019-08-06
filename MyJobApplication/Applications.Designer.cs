@@ -91,7 +91,7 @@
             // Advertisement
             // 
             this.Advertisement.Text = "Advertisement";
-            this.Advertisement.Width = 100;
+            this.Advertisement.Width = 200;
             // 
             // CV
             // 

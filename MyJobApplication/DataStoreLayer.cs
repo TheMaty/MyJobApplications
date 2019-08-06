@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace MyJobApplication
@@ -101,6 +103,23 @@ namespace MyJobApplication
                 var serializer = new XmlSerializer(typeof(jobApplication));
                 return (jobActivity)serializer.Deserialize(stream);
             }
+        }
+
+        public static string GetFileNameFromTitle(string title)
+        {
+            string[] records = Directory.GetFiles(ConfigurationManager.AppSettings["DBFile"]);
+
+            foreach (string dataFile in records)
+            {
+                XDocument doc = XDocument.Load(dataFile);
+                foreach (var dm in doc.Descendants("jobApplication"))
+                {
+                    if (dm.Element("title").Value == title)
+                        return dataFile;
+                }
+            }
+
+            return "";
         }
     }
 }

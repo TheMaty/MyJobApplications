@@ -51,6 +51,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Activities.Designer.cs">
+      <DependentUpon>Activities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +70,11 @@
     <Compile Include="DisplayApplicationForm.Designer.cs">
       <DependentUpon>DisplayApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DisplayBodyOfAdvertisement.cs">
+    <Compile Include="DisplayBody.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DisplayBodyOfAdvertisement.Designer.cs">
-      <DependentUpon>DisplayBodyOfAdvertisement.cs</DependentUpon>
+    <Compile Include="DisplayBody.Designer.cs">
+      <DependentUpon>DisplayBody.cs</DependentUpon>
     </Compile>
     <Compile Include="DisplayCV.cs">
       <SubType>Form</SubType>
@@ -114,14 +120,17 @@
     <Compile Include="TreeViewForm.Designer.cs">
       <DependentUpon>TreeViewForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Activities.resx">
+      <DependentUpon>Activities.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications.resx">
       <DependentUpon>Applications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayApplicationForm.resx">
       <DependentUpon>DisplayApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DisplayBodyOfAdvertisement.resx">
-      <DependentUpon>DisplayBodyOfAdvertisement.cs</DependentUpon>
+    <EmbeddedResource Include="DisplayBody.resx">
+      <DependentUpon>DisplayBody.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayCV.resx">
       <DependentUpon>DisplayCV.cs</DependentUpon>

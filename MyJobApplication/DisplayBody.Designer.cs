@@ -1,6 +1,6 @@
 ﻿namespace MyJobApplication
 {
-    partial class DisplayBodyOfAdvertisementForm
+    partial class DisplayBodyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // DisplayBodyOfAdvertisementForm
+            // DisplayBodyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -51,11 +51,11 @@
             this.Controls.Add(this.richTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MinimizeBox = false;
-            this.Name = "DisplayBodyOfAdvertisementForm";
+            this.Name = "DisplayBodyForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Advertisement Details";
-            this.Load += new System.EventHandler(this.DisplayBodyOfAdvertisementForm_Load);
+            this.Load += new System.EventHandler(this.DisplayBodyForm_Load);
             this.ResumeLayout(false);
 
         }
