@@ -74,13 +74,13 @@ namespace MyJobApplication
                 {
                     ListViewItem item = new ListViewItem(new string[]
                     {
-                        dm.Element("applicationDate").Value,
-                        dm.Element("company").Value,
-                        dm.Element("advertiser").Value,
-                        dm.Element("title").Value,
-                        dm.Element("url").Value,
-                        dm.Element("advertisement").Value,
-                        dm.Element("AppliedCVBinary").Value,
+                        dm.Element("applicationDate").Value, //automatic value ! if error occurs,system must throw an exception even poor performance happens.
+                        dm.Element("company")!=null?dm.Element("company").Value:"",
+                        dm.Element("advertiser")!=null?dm.Element("advertiser").Value:"",
+                        dm.Element("title")!=null?dm.Element("title").Value:"",
+                        dm.Element("url")!=null?dm.Element("url").Value:"",
+                        dm.Element("advertisement")!=null?dm.Element("advertisement").Value:"",
+                        dm.Element("AppliedCVBinary")!=null?dm.Element("AppliedCVBinary").Value:"",
 
                     });
                     listViewApplications.Items.Add(item);
