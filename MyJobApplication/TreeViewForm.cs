@@ -125,8 +125,55 @@ namespace MyJobApplication
                         appForm.Show();
                         this.MdiParent.MdiChildren[2].Activate();
                         break;
-                    case string d when d.Contains("My Job Applications\\Activities\\Activities"):
+                    case string d when d.Contains("My Job Applications\\Activities\\Activities") && e.Node.Level == 2:
                         Activities actForm = new Activities(records);
+
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
+                        actForm.MdiParent = this.MdiParent;
+                        actForm.Show();
+                        this.MdiParent.MdiChildren[2].Activate();
+                        break;
+                    case string f when f.Contains("My Job Applications\\Activities\\Activities\\") && e.Node.Level == 3:
+                        DisplayJobActivityForm jobActForm = new DisplayJobActivityForm();
+                        if (!Array.Exists(records, x => x.Contains(e.Node.Name)))
+                        {
+                            MessageBox.Show("No Record is found in the system");
+                            return;
+                        }
+                        jobActForm.DataFile = Array.FindAll(records, x => x.Contains(e.Node.Name))[0];
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
+                        jobActForm.MdiParent = this.MdiParent;
+                        jobActForm.Show();
+                        this.MdiParent.MdiChildren[2].Activate();
+                        break;
+                    case string g when g.Contains("My Job Applications\\Activities\\Regarding\\") && e.Node.Level == 3:
+                        //search all activities for selected item
+                        List<string> strParams = new List<string>();
+
+                        foreach (string dataFile in records)
+                        {
+                            XDocument doc = XDocument.Load(dataFile);
+
+                            foreach (var dm in doc.Descendants("jobActivity"))
+                            {
+                                if (dm.Element("regarding").Value.Contains(e.Node.Name))
+                                    strParams.Add(dataFile);
+                            }
+                        }
+
+                        actForm = new Activities(strParams.ToArray<string>());
+
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
+                        actForm.MdiParent = this.MdiParent;
+                        actForm.Show();
+                        this.MdiParent.MdiChildren[2].Activate();
+
+                        break;
+                    case string h when h.Contains("My Job Applications\\Activities\\Contacts\\") && e.Node.Level == 3:
+                        actForm = new Activities(records.Where(x => x.Contains(e.Node.Name)).ToArray<string>());
 
                         if (this.MdiParent.MdiChildren.Length > 2)
                             this.MdiParent.MdiChildren[2].Close();

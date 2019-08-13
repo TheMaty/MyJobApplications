@@ -142,6 +142,7 @@
             this.txtURL.Name = "txtURL";
             this.txtURL.Size = new System.Drawing.Size(628, 22);
             this.txtURL.TabIndex = 3;
+            this.txtURL.TextChanged += new System.EventHandler(this.TxtURL_TextChanged);
             // 
             // lblCV
             // 

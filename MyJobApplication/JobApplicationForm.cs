@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -92,6 +93,37 @@ namespace MyJobApplication
                 dataContact.Add(str);
             }
             txtContact.AutoCompleteCustomSource = dataContact;
+        }
+
+        private void TxtURL_TextChanged(object sender, EventArgs e)
+        {
+            ////fill body with URL
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(((TextBox)sender).Text);
+
+            //using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            //using (Stream stream = response.GetResponseStream())
+            //using (StreamReader reader = new StreamReader(stream))
+            //{
+            //    wb.Navigate( reader.ReadToEnd();
+            //    txtBody.Text = txtBody.Text.Replace("<[^>]*>", "");
+            //}
+
+            //Create the WebBrowser control
+            WebBrowser wb = new WebBrowser();
+            //Add a new event to process document when download is completed   
+            wb.DocumentCompleted +=
+                new WebBrowserDocumentCompletedEventHandler(DisplayText);
+            //Download the webpage
+            wb.Url = new UriBuilder(txtURL.Text).Uri;
+
+        }
+
+        private void DisplayText(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            WebBrowser wb = (WebBrowser)sender;
+            wb.Document.ExecCommand("SelectAll", false, null);
+            wb.Document.ExecCommand("Copy", false, null);
+            txtBody.Text = Clipboard.GetText().Replace("\r\n\r\n\r\n", "");
         }
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jobActivity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <activityDate>2019-08-13T10:40:43.4595462+01:00</activityDate>
+  <createdOn>2019-08-13T10:42:10.1433225+01:00</createdOn>
+  <modifiedOn>2019-08-13T10:42:10.1423236+01:00</modifiedOn>
+  <title>book a phone through web site form</title>
+  <body>just send a phone call appointment request</body>
+  <regarding>Microsoft Dynamics CRM Functional Consultant</regarding>
+  <contact>Hugh Drummond</contact>
+  <type>Phone Call</type>
+</jobActivity>

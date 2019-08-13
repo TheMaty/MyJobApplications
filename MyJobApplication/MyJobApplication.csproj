@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MyJobApplication</RootNamespace>
     <AssemblyName>MyJobApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -82,6 +83,12 @@
     <Compile Include="DisplayCV.Designer.cs">
       <DependentUpon>DisplayCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisplayJobActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayJobActivityForm.Designer.cs">
+      <DependentUpon>DisplayJobActivityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="JobActivityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +142,9 @@
     <EmbeddedResource Include="DisplayCV.resx">
       <DependentUpon>DisplayCV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DisplayJobActivityForm.resx">
+      <DependentUpon>DisplayJobActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="JobActivityForm.resx">
       <DependentUpon>JobActivityForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +165,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
