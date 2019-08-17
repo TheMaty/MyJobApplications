@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -36,6 +37,7 @@ namespace MyJobApplication
                 dateTimePickerCreatedOn.Value = DateTime.Parse(dm.Element("createdOn").Value);
                 dateTimePickerModifiedOn.Value = DateTime.Parse(dm.Element("modifiedOn").Value);
                 dateTimePickerAppliedOn.Value = DateTime.Parse(dm.Element("applicationDate").Value);
+                dateTimePickerClosedOn.Value = DateTime.Parse(dm.Element("closedOn") == null ? "01/01/1981" : dm.Element("closedOn").Value);
                 txtCompany.Text = dm.Element("company").Value;
                 txtContact.Text = dm.Element("advertiser").Value;
                 txtTitle.Text = dm.Element("title").Value;
@@ -70,5 +72,11 @@ namespace MyJobApplication
                 File.Delete("temp.docx");
         }
 
+        private void OfficeViewer1_DocumentOpened(object sender, EventArgs args)
+        {
+            if (this.MdiParent.MdiChildren.Length > 2)
+                this.MdiParent.MdiChildren[0].Activate();
+
+        }
     }
 }

@@ -35,7 +35,11 @@ namespace MyJobApplication
                 XDocument doc = XDocument.Load(dataFile);
                 foreach (var dm in doc.Descendants("jobApplication"))
                 {
-                    mainTreeView.Nodes[0].Nodes[0].Nodes.Add(new TreeNode() { Text = dm.Element("title").Value, Name = dm.Element("company").Value + "_" + dm.Element("title").Value });
+                    if (dataFile.Contains("closed_"))
+                        mainTreeView.Nodes[0].Nodes[0].Nodes[1].Nodes.Add(new TreeNode() { Text = dm.Element("title").Value, Name = dm.Element("company").Value + "_" + dm.Element("title").Value });
+                    else
+                        mainTreeView.Nodes[0].Nodes[0].Nodes[0].Nodes.Add(new TreeNode() { Text = dm.Element("title").Value, Name = dm.Element("company").Value + "_" + dm.Element("title").Value });
+
                     nodeLength = dm.Element("title").Value.Length > nodeLength ? dm.Element("title").Value.Length : nodeLength;
                     Applications.Add(dm.Element("title").Value);
 
@@ -109,7 +113,7 @@ namespace MyJobApplication
             {
                 switch (e.Node.FullPath)
                 {
-                    case string a when a.Contains ("My Job Applications\\Applications\\"):
+                    case string a when a.Contains ("My Job Applications\\Applications\\") && e.Node.Level == 3:
                     case string b when b.Contains ("My Job Applications\\Companies\\") && e.Node.Level == 3:
                     case string c when c.Contains ("My Job Applications\\Contacts\\") && e.Node.Level == 3:
                         DisplayApplicationForm appForm = new DisplayApplicationForm();
@@ -182,33 +186,71 @@ namespace MyJobApplication
                         this.MdiParent.MdiChildren[2].Activate();
                         break;
                 }
+
+                mainTreeView.SelectedNode = e.Node;
             }
 
             if (e.Button == MouseButtons.Right)
             {
-                switch (e.Node.Name)
+                switch (e.Node.FullPath)
                 {
-                    case "Applications":
-                        JobApplicationForm jobApp = new JobApplicationForm();
-                        if (this.MdiParent.MdiChildren.Length > 2)
-                            this.MdiParent.MdiChildren[2].Close();
-                        jobApp.MdiParent = this.MdiParent;
-                        jobApp.Show();
+                    case "My Job Applications\\Applications":
+                        mainTreeView.ContextMenuStrip = contextMenuStrip1;
+                        contextMenuStrip1.Items[0].Visible = true;
+                        contextMenuStrip1.Items[1].Visible = false;
+                        contextMenuStrip1.Items[2].Visible = false;
                         break;
-                    case "Companies":
+                    case string a when a.Contains("My Job Applications\\Applications\\Open") && e.Node.Level == 3:
+                        mainTreeView.ContextMenuStrip = contextMenuStrip1;
+                        contextMenuStrip1.Items[0].Visible = false;
+                        contextMenuStrip1.Items[1].Visible = false;
+                        contextMenuStrip1.Items[2].Visible = true;
                         break;
-                    case "Contacts":
+                    case "My Job Applications\\Activities":
+                        mainTreeView.ContextMenuStrip = contextMenuStrip1;
+                        contextMenuStrip1.Items[0].Visible = false;
+                        contextMenuStrip1.Items[1].Visible = true;
+                        contextMenuStrip1.Items[2].Visible = false;
                         break;
-                    case "Activities":
-                        JobActivityForm jobAct = new JobActivityForm();
-                        if (this.MdiParent.MdiChildren.Length > 2)
-                            this.MdiParent.MdiChildren[2].Close();
-                        jobAct.MdiParent = this.MdiParent;
-                        jobAct.Show();
+                    default:
+                        mainTreeView.ContextMenuStrip = null;
                         break;
                 }
             }
         }
 
+
+        private void CloseJobApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Close Job Application
+            string strFilePath = Array.FindAll(records, x => x.Contains(mainTreeView.SelectedNode.Name))[0];
+            DataStoreLayer ds = new DataStoreLayer();
+            jobApplication jApp = ds.LoadJobApplication(strFilePath);
+            jApp.closedOn = DateTime.Now;
+            File.Delete(Array.FindAll(records, x => x.Contains(mainTreeView.SelectedNode.Name))[0]);
+            ds.InsertApplication(jApp);
+
+            System.IO.File.Move(strFilePath, strFilePath.Replace(Path.GetFileNameWithoutExtension(strFilePath), "closed_" + Path.GetFileNameWithoutExtension(strFilePath)));
+        }
+
+        private void AddActivityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Add Activity
+            JobActivityForm jobAct = new JobActivityForm();
+            if (this.MdiParent.MdiChildren.Length > 2)
+                this.MdiParent.MdiChildren[2].Close();
+            jobAct.MdiParent = this.MdiParent;
+            jobAct.Show();
+        }
+
+        private void ApplyForAJobToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Apply for a job
+            JobApplicationForm jobApp = new JobApplicationForm();
+            if (this.MdiParent.MdiChildren.Length > 2)
+                this.MdiParent.MdiChildren[2].Close();
+            jobApp.MdiParent = this.MdiParent;
+            jobApp.Show();
+        }
     }
 }

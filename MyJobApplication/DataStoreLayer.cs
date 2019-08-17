@@ -15,6 +15,7 @@ namespace MyJobApplication
         public DateTime applicationDate;
         public DateTime createdOn;
         public DateTime modifiedOn;
+        public DateTime closedOn;
         public string company;
         public string title;
         public string advertisement;

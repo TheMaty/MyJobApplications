@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jobApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <applicationDate>2019-06-02T03:31:00.7827819+03:00</applicationDate>
-  <createdOn>2019-06-02T03:31:00.7827819+03:00</createdOn>
-  <modifiedOn>2019-06-02T03:31:00.7827819+03:00</modifiedOn>
+  <applicationDate>2019-06-02T01:31:00.7827819+01:00</applicationDate>
+  <createdOn>2019-06-02T01:31:00.7827819+01:00</createdOn>
+  <modifiedOn>2019-06-02T01:31:00.7827819+01:00</modifiedOn>
+  <closedOn>2019-08-17T01:44:03.1213197+01:00</closedOn>
   <company>Montash Global Talent Acquisition</company>
   <title>Microsoft Dynamics 365 CRM Developer</title>
   <advertisement>Microsoft Dynamics 365 CRM Developer

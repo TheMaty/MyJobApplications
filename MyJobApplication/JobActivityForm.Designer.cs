@@ -179,7 +179,8 @@
             "E-Mail Message - B&B Technologies",
             "E-Mail Message - Outlook",
             "LinkedIn Message",
-            "Phone Call"});
+            "Phone Call",
+            "Follow Up"});
             this.cmbType.Location = new System.Drawing.Point(106, 240);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(627, 24);

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jobApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <applicationDate>2019-06-01T06:10:49.3574635+03:00</applicationDate>
-  <createdOn>2019-06-01T06:10:49.3574635+03:00</createdOn>
-  <modifiedOn>2019-06-01T06:10:49.3574635+03:00</modifiedOn>
+  <applicationDate>2019-06-01T04:10:49.3574635+01:00</applicationDate>
+  <createdOn>2019-06-01T04:10:49.3574635+01:00</createdOn>
+  <modifiedOn>2019-06-01T04:10:49.3574635+01:00</modifiedOn>
+  <closedOn>2019-08-17T01:42:34.6720378+01:00</closedOn>
   <company>Marks Sattin recruitment - through reed.co.uk</company>
   <title>Senior Developer Dynamics</title>
   <advertisement>Senior Developer Dynamics

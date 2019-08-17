@@ -27,6 +27,7 @@ namespace MyJobApplication
             jb.createdOn = DateTime.Now;
             jb.modifiedOn = DateTime.Now;
             jb.applicationDate = dateTimePickerAppliedOn.Value;
+            jb.closedOn = new DateTime(1981, 1, 1);
             jb.advertisement = txtBody.Text;
             jb.advertiser = txtContact.Text;
 
@@ -97,16 +98,10 @@ namespace MyJobApplication
 
         private void TxtURL_TextChanged(object sender, EventArgs e)
         {
-            ////fill body with URL
-            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(((TextBox)sender).Text);
-
-            //using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            //using (Stream stream = response.GetResponseStream())
-            //using (StreamReader reader = new StreamReader(stream))
-            //{
-            //    wb.Navigate( reader.ReadToEnd();
-            //    txtBody.Text = txtBody.Text.Replace("<[^>]*>", "");
-            //}
+            if (!Uri.IsWellFormedUriString(((TextBox)sender).Text, UriKind.Absolute))
+            {
+                return;
+            }
 
             //Create the WebBrowser control
             WebBrowser wb = new WebBrowser();

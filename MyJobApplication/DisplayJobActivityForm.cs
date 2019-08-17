@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,12 @@ namespace MyJobApplication
                 return;
             }
 
-            XDocument doc = XDocument.Load(DataFile);
+            XDocument doc;
+
+            if (File.Exists(DataFile))
+                doc = XDocument.Load(DataFile);
+            else
+                doc = XDocument.Load(DataFile.Replace(Path.GetFileNameWithoutExtension(DataFile), "closed_" + Path.GetFileNameWithoutExtension(DataFile)));
 
             foreach (var dm in doc.Descendants("jobActivity"))
             {

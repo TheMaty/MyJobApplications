@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jobApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <applicationDate>2019-06-02T05:01:26.454777+03:00</applicationDate>
-  <createdOn>2019-06-02T05:01:26.454777+03:00</createdOn>
-  <modifiedOn>2019-06-02T05:01:26.454777+03:00</modifiedOn>
+  <applicationDate>2019-06-02T03:01:26.454777+01:00</applicationDate>
+  <createdOn>2019-06-02T03:01:26.454777+01:00</createdOn>
+  <modifiedOn>2019-06-02T03:01:26.454777+01:00</modifiedOn>
+  <closedOn>2019-08-17T01:48:25.2610825+01:00</closedOn>
   <company>Harvey Nash IT Recruitment UK</company>
   <title>Delivery Manager - Dynamics 365</title>
   <advertisement>Delivery Manager - Dynamics 365
