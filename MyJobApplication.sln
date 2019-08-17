@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyJobApplication", "MyJobApplication\MyJobApplication.csproj", "{6726553E-E652-4254-B1CD-9C757AF63238}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControls", "UserControls\UserControls.csproj", "{46AD79F1-48E5-4AE6-B7D0-DF4D292014A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FollowUp", "FollowUp\FollowUp.csproj", "{3B6B0DDF-0666-489F-8AFA-D88225028CF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{46AD79F1-48E5-4AE6-B7D0-DF4D292014A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46AD79F1-48E5-4AE6-B7D0-DF4D292014A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46AD79F1-48E5-4AE6-B7D0-DF4D292014A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B6B0DDF-0666-489F-8AFA-D88225028CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6B0DDF-0666-489F-8AFA-D88225028CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6B0DDF-0666-489F-8AFA-D88225028CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6B0DDF-0666-489F-8AFA-D88225028CF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

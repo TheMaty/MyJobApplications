@@ -86,8 +86,16 @@ namespace MyJobApplication
                     //check dublicate control
                     if (!mainTreeView.Nodes[0].Nodes[3].Nodes[0].Nodes.ContainsKey(Path.GetFileNameWithoutExtension(dataFile)))
                     {
-                        mainTreeView.Nodes[0].Nodes[3].Nodes[0].Nodes.Add(new TreeNode() { Text = Path.GetFileNameWithoutExtension(dataFile), Name = Path.GetFileNameWithoutExtension(dataFile) });
-                        nodeLength = Path.GetFileNameWithoutExtension(dataFile).Length > nodeLength ? Path.GetFileNameWithoutExtension(dataFile).Length : nodeLength;
+                        if (dm.Element("type").Value == "Follow Up")
+                        {
+                            mainTreeView.Nodes[0].Nodes[3].Nodes[3].Nodes.Add(new TreeNode() { Text = Path.GetFileNameWithoutExtension(dataFile), Name = Path.GetFileNameWithoutExtension(dataFile) });
+                            nodeLength = Path.GetFileNameWithoutExtension(dataFile).Length > nodeLength ? Path.GetFileNameWithoutExtension(dataFile).Length : nodeLength;
+                        }
+                        else
+                        {
+                            mainTreeView.Nodes[0].Nodes[3].Nodes[0].Nodes.Add(new TreeNode() { Text = Path.GetFileNameWithoutExtension(dataFile), Name = Path.GetFileNameWithoutExtension(dataFile) });
+                            nodeLength = Path.GetFileNameWithoutExtension(dataFile).Length > nodeLength ? Path.GetFileNameWithoutExtension(dataFile).Length : nodeLength;
+                        }
                     }
 
                     if (dm.Element("regarding").Value != "" && !mainTreeView.Nodes[0].Nodes[3].Nodes[1].Nodes.ContainsKey(dm.Element("regarding").Value))
@@ -183,6 +191,20 @@ namespace MyJobApplication
                             this.MdiParent.MdiChildren[2].Close();
                         actForm.MdiParent = this.MdiParent;
                         actForm.Show();
+                        this.MdiParent.MdiChildren[2].Activate();
+                        break;
+                    case string i when i.Contains("My Job Applications\\Activities\\FollowUps\\") && e.Node.Level == 3:
+                        jobActForm = new DisplayJobActivityForm();
+                        if (!Array.Exists(records, x => x.Contains(e.Node.Name)))
+                        {
+                            MessageBox.Show("No Record is found in the system");
+                            return;
+                        }
+                        jobActForm.DataFile = Array.FindAll(records, x => x.Contains(e.Node.Name))[0];
+                        if (this.MdiParent.MdiChildren.Length > 2)
+                            this.MdiParent.MdiChildren[2].Close();
+                        jobActForm.MdiParent = this.MdiParent;
+                        jobActForm.Show();
                         this.MdiParent.MdiChildren[2].Activate();
                         break;
                 }

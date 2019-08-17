@@ -39,15 +39,17 @@
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Activities");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Regarding");
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Contacts");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Activities", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("FollowUps");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Activities", new System.Windows.Forms.TreeNode[] {
             treeNode6,
             treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("My Job Applications", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("My Job Applications", new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode4,
             treeNode5,
-            treeNode9});
+            treeNode10});
             this.mainTreeView = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.applyForAJobToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,12 +83,14 @@
             treeNode7.Text = "Regarding";
             treeNode8.Name = "Activities-Contacts";
             treeNode8.Text = "Contacts";
-            treeNode9.Name = "Activities";
-            treeNode9.Text = "Activities";
-            treeNode10.Name = "MyJobApplications";
-            treeNode10.Text = "My Job Applications";
+            treeNode9.Name = "FollowUps";
+            treeNode9.Text = "FollowUps";
+            treeNode10.Name = "Activities";
+            treeNode10.Text = "Activities";
+            treeNode11.Name = "MyJobApplications";
+            treeNode11.Text = "My Job Applications";
             this.mainTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode10});
+            treeNode11});
             this.mainTreeView.Size = new System.Drawing.Size(367, 600);
             this.mainTreeView.TabIndex = 0;
             this.mainTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.mainTreeView_NodeMouseClick);
