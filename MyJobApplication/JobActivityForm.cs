@@ -17,6 +17,13 @@ namespace MyJobApplication
             InitializeComponent();
         }
 
+        public JobActivityForm(jobApplication followUpApplication)
+        {
+            InitializeComponent();
+            txtRegarding.Text = followUpApplication.title;
+            cmbType.SelectedItem = "Follow Up";
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (cmbType.SelectedItem == null)

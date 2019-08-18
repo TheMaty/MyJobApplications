@@ -263,6 +263,7 @@ namespace MyJobApplication
                         contextMenuStrip1.Items[1].Visible = false;
                         contextMenuStrip1.Items[2].Visible = false;
                         contextMenuStrip1.Items[3].Visible = false;
+                        contextMenuStrip1.Items[4].Visible = false;
                         break;
                     case string a when a.Contains("My Job Applications\\Applications\\Open") && e.Node.Level == 3:
                         mainTreeView.ContextMenuStrip = contextMenuStrip1;
@@ -270,6 +271,7 @@ namespace MyJobApplication
                         contextMenuStrip1.Items[1].Visible = false;
                         contextMenuStrip1.Items[2].Visible = true;
                         contextMenuStrip1.Items[3].Visible = false;
+                        contextMenuStrip1.Items[4].Visible = true;
                         break;
                     case "My Job Applications\\Activities":
                         mainTreeView.ContextMenuStrip = contextMenuStrip1;
@@ -277,6 +279,7 @@ namespace MyJobApplication
                         contextMenuStrip1.Items[1].Visible = true;
                         contextMenuStrip1.Items[2].Visible = false;
                         contextMenuStrip1.Items[3].Visible = false;
+                        contextMenuStrip1.Items[4].Visible = false;
                         break;
                     case string b when b.Contains("My Job Applications\\Activities\\FollowUps") && e.Node.Level == 3:
                         mainTreeView.ContextMenuStrip = contextMenuStrip1;
@@ -284,6 +287,7 @@ namespace MyJobApplication
                         contextMenuStrip1.Items[1].Visible = false;
                         contextMenuStrip1.Items[2].Visible = false;
                         contextMenuStrip1.Items[3].Visible = true;
+                        contextMenuStrip1.Items[4].Visible = false;
                         break;
                     default:
                         mainTreeView.ContextMenuStrip = null;
@@ -334,5 +338,18 @@ namespace MyJobApplication
             drawTree();
         }
 
+        private void CreateFollowUpsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Create FollowUps from Job Application.
+            jobApplication jApplication = new jobApplication();
+            DataStoreLayer dstore = new DataStoreLayer();
+            jApplication = dstore.LoadJobApplication(Array.FindAll(records, x => x.Contains(mainTreeView.SelectedNode.Name))[0]);
+            JobActivityForm jobActForm = new JobActivityForm(jApplication);
+            if (this.MdiParent.MdiChildren.Length > 2)
+                this.MdiParent.MdiChildren[2].Close();
+            jobActForm.MdiParent = this.MdiParent;
+            jobActForm.Show();
+            this.MdiParent.MdiChildren[2].Activate();
+        }
     }
 }
