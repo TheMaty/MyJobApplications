@@ -50,16 +50,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 869);
-            this.ControlBox = false;
+            this.ControlBox = true;
             this.Controls.Add(this.txtItems);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MinimizeBox = true;
             this.Name = "FollowUpForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Follow Up ";
             this.Load += new System.EventHandler(this.FollowUpForm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FollowUpForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

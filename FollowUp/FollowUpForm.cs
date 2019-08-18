@@ -63,7 +63,12 @@ namespace FollowUp
             Start();
         }
 
-       
+        private void FollowUpForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+
         private void Start()
         {
             Thread thread = new Thread(() => {
