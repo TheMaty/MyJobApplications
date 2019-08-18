@@ -53,9 +53,9 @@
             // 
             this.txtCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtCompany.Enabled = false;
             this.txtCompany.Location = new System.Drawing.Point(136, 170);
             this.txtCompany.Name = "txtCompany";
+            this.txtCompany.ReadOnly = true;
             this.txtCompany.Size = new System.Drawing.Size(628, 22);
             this.txtCompany.TabIndex = 101;
             // 
@@ -63,9 +63,9 @@
             // 
             this.txtContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtContact.Enabled = false;
             this.txtContact.Location = new System.Drawing.Point(136, 213);
             this.txtContact.Name = "txtContact";
+            this.txtContact.ReadOnly = true;
             this.txtContact.Size = new System.Drawing.Size(628, 22);
             this.txtContact.TabIndex = 102;
             // 
@@ -89,9 +89,9 @@
             // 
             // txtURL
             // 
-            this.txtURL.Enabled = false;
             this.txtURL.Location = new System.Drawing.Point(136, 260);
             this.txtURL.Name = "txtURL";
+            this.txtURL.ReadOnly = true;
             this.txtURL.Size = new System.Drawing.Size(628, 22);
             this.txtURL.TabIndex = 103;
             // 
@@ -115,10 +115,10 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Enabled = false;
             this.txtTitle.Location = new System.Drawing.Point(136, 300);
             this.txtTitle.Multiline = true;
             this.txtTitle.Name = "txtTitle";
+            this.txtTitle.ReadOnly = true;
             this.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTitle.Size = new System.Drawing.Size(628, 72);
             this.txtTitle.TabIndex = 104;
@@ -197,6 +197,7 @@
             // 
             this.txtBody.Location = new System.Drawing.Point(136, 388);
             this.txtBody.Name = "txtBody";
+            this.txtBody.ReadOnly = true;
             this.txtBody.Size = new System.Drawing.Size(628, 405);
             this.txtBody.TabIndex = 121;
             this.txtBody.Text = "";

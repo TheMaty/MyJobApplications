@@ -101,9 +101,9 @@
             // 
             this.txtRegarding.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtRegarding.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtRegarding.Enabled = false;
             this.txtRegarding.Location = new System.Drawing.Point(106, 164);
             this.txtRegarding.Name = "txtRegarding";
+            this.txtRegarding.ReadOnly = true;
             this.txtRegarding.Size = new System.Drawing.Size(628, 22);
             this.txtRegarding.TabIndex = 108;
             // 
@@ -111,9 +111,9 @@
             // 
             this.txtContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtContact.Enabled = false;
             this.txtContact.Location = new System.Drawing.Point(106, 202);
             this.txtContact.Name = "txtContact";
+            this.txtContact.ReadOnly = true;
             this.txtContact.Size = new System.Drawing.Size(628, 22);
             this.txtContact.TabIndex = 109;
             // 
@@ -155,9 +155,9 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Enabled = false;
             this.txtTitle.Location = new System.Drawing.Point(106, 126);
             this.txtTitle.Name = "txtTitle";
+            this.txtTitle.ReadOnly = true;
             this.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtTitle.Size = new System.Drawing.Size(628, 22);
             this.txtTitle.TabIndex = 107;
@@ -188,9 +188,9 @@
             // 
             // txtBody
             // 
-            this.txtBody.Enabled = false;
             this.txtBody.Location = new System.Drawing.Point(106, 280);
             this.txtBody.Name = "txtBody";
+            this.txtBody.ReadOnly = true;
             this.txtBody.Size = new System.Drawing.Size(628, 483);
             this.txtBody.TabIndex = 119;
             this.txtBody.Text = "";
