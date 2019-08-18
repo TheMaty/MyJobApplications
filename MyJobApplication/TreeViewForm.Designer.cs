@@ -55,6 +55,7 @@
             this.applyForAJobToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeJobApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopFollowUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,29 +66,29 @@
             this.mainTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTreeView.Location = new System.Drawing.Point(0, 0);
             this.mainTreeView.Name = "mainTreeView";
-            treeNode1.Name = "Open";
+            treeNode1.Name = "__Open";
             treeNode1.Text = "Open";
-            treeNode2.Name = "Close";
+            treeNode2.Name = "__Close";
             treeNode2.Text = "Close";
-            treeNode3.Name = "Applications";
+            treeNode3.Name = "__Applications";
             treeNode3.Text = "Applications";
             treeNode3.ToolTipText = "My dreams";
-            treeNode4.Name = "Companies";
+            treeNode4.Name = "__Companies";
             treeNode4.Text = "Companies";
-            treeNode5.Name = "Contacts";
+            treeNode5.Name = "__Contacts";
             treeNode5.Text = "Contacts";
             treeNode5.ToolTipText = "People who i chat";
-            treeNode6.Name = "Activities-Applications";
+            treeNode6.Name = "__Activities-Applications";
             treeNode6.Text = "Activities";
-            treeNode7.Name = "Activities-Regarding";
+            treeNode7.Name = "__Activities-Regarding";
             treeNode7.Text = "Regarding";
-            treeNode8.Name = "Activities-Contacts";
+            treeNode8.Name = "__Activities-Contacts";
             treeNode8.Text = "Contacts";
-            treeNode9.Name = "FollowUps";
+            treeNode9.Name = "__FollowUps";
             treeNode9.Text = "FollowUps";
-            treeNode10.Name = "Activities";
+            treeNode10.Name = "__Activities";
             treeNode10.Text = "Activities";
-            treeNode11.Name = "MyJobApplications";
+            treeNode11.Name = "__MyJobApplications";
             treeNode11.Text = "My Job Applications";
             this.mainTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode11});
@@ -101,9 +102,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applyForAJobToolStripMenuItem,
             this.addActivityToolStripMenuItem,
-            this.closeJobApplicationToolStripMenuItem});
+            this.closeJobApplicationToolStripMenuItem,
+            this.stopFollowUpToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(223, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(223, 100);
             // 
             // applyForAJobToolStripMenuItem
             // 
@@ -125,6 +127,13 @@
             this.closeJobApplicationToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
             this.closeJobApplicationToolStripMenuItem.Text = "Close Job Application";
             this.closeJobApplicationToolStripMenuItem.Click += new System.EventHandler(this.CloseJobApplicationToolStripMenuItem_Click);
+            // 
+            // stopFollowUpToolStripMenuItem
+            // 
+            this.stopFollowUpToolStripMenuItem.Name = "stopFollowUpToolStripMenuItem";
+            this.stopFollowUpToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+            this.stopFollowUpToolStripMenuItem.Text = "Stop Follow Up";
+            this.stopFollowUpToolStripMenuItem.Click += new System.EventHandler(this.StopFollowUpToolStripMenuItem_Click);
             // 
             // TreeViewForm
             // 
@@ -153,5 +162,6 @@
         private System.Windows.Forms.ToolStripMenuItem applyForAJobToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addActivityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeJobApplicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopFollowUpToolStripMenuItem;
     }
 }

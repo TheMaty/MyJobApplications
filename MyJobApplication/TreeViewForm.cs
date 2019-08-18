@@ -23,11 +23,43 @@ namespace MyJobApplication
         public List<string> Contacts = new List<string>();
         public List<string> Applications = new List<string>();
 
-        public TreeViewForm()
+        private void initiateTreeView(TreeNodeCollection coll)
         {
-            int nodeLength = 0;
-            InitializeComponent();
+            for (int i=coll.Count-1; i>=0; i--)
+            {
+                if (coll[i].Nodes.Count > 0)
+                    initiateTreeView(coll[i].Nodes);
 
+                if (!coll[i].Name.Contains("__"))
+                    mainTreeView.Nodes.Remove(coll[i]);
+            }
+        }
+
+        private TreeNode GetNodeFromPath(TreeNode node, string path)
+        {
+            TreeNode foundNode = null;
+            foreach (TreeNode tn in node.Nodes)
+            {
+                if (tn.FullPath == path)
+                {
+                    return tn;
+                }
+                else if (tn.Nodes.Count > 0)
+                {
+                    foundNode = GetNodeFromPath(tn, path);
+                }
+                if (foundNode != null)
+                    return foundNode;
+            }
+            return null;
+        }
+
+        public void drawTree()
+        {
+            string fullPathOfSelectedNode = mainTreeView.SelectedNode==null?"":mainTreeView.SelectedNode.FullPath;
+            initiateTreeView(mainTreeView.Nodes);
+
+            int nodeLength = 0;
             records = Directory.GetFiles(dbFilePath);
 
             foreach (string dataFile in records)
@@ -113,6 +145,15 @@ namespace MyJobApplication
 
                 }
             }
+
+            mainTreeView.SelectedNode = GetNodeFromPath(mainTreeView.Nodes[0], fullPathOfSelectedNode);
+            mainTreeView.Select();
+        }
+
+        public TreeViewForm()
+        {
+            InitializeComponent();
+            drawTree();
         }
 
         private void mainTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -221,18 +262,28 @@ namespace MyJobApplication
                         contextMenuStrip1.Items[0].Visible = true;
                         contextMenuStrip1.Items[1].Visible = false;
                         contextMenuStrip1.Items[2].Visible = false;
+                        contextMenuStrip1.Items[3].Visible = false;
                         break;
                     case string a when a.Contains("My Job Applications\\Applications\\Open") && e.Node.Level == 3:
                         mainTreeView.ContextMenuStrip = contextMenuStrip1;
                         contextMenuStrip1.Items[0].Visible = false;
                         contextMenuStrip1.Items[1].Visible = false;
                         contextMenuStrip1.Items[2].Visible = true;
+                        contextMenuStrip1.Items[3].Visible = false;
                         break;
                     case "My Job Applications\\Activities":
                         mainTreeView.ContextMenuStrip = contextMenuStrip1;
                         contextMenuStrip1.Items[0].Visible = false;
                         contextMenuStrip1.Items[1].Visible = true;
                         contextMenuStrip1.Items[2].Visible = false;
+                        contextMenuStrip1.Items[3].Visible = false;
+                        break;
+                    case string b when b.Contains("My Job Applications\\Activities\\FollowUps") && e.Node.Level == 3:
+                        mainTreeView.ContextMenuStrip = contextMenuStrip1;
+                        contextMenuStrip1.Items[0].Visible = false;
+                        contextMenuStrip1.Items[1].Visible = false;
+                        contextMenuStrip1.Items[2].Visible = false;
+                        contextMenuStrip1.Items[3].Visible = true;
                         break;
                     default:
                         mainTreeView.ContextMenuStrip = null;
@@ -240,7 +291,6 @@ namespace MyJobApplication
                 }
             }
         }
-
 
         private void CloseJobApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -253,6 +303,7 @@ namespace MyJobApplication
             ds.InsertApplication(jApp);
 
             System.IO.File.Move(strFilePath, strFilePath.Replace(Path.GetFileNameWithoutExtension(strFilePath), "closed_" + Path.GetFileNameWithoutExtension(strFilePath)));
+            drawTree();
         }
 
         private void AddActivityToolStripMenuItem_Click(object sender, EventArgs e)
@@ -274,5 +325,14 @@ namespace MyJobApplication
             jobApp.MdiParent = this.MdiParent;
             jobApp.Show();
         }
+
+        private void StopFollowUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Terminates Follow Up
+            string strFilePath = Array.FindAll(records, x => x.Contains(mainTreeView.SelectedNode.Name))[0];
+            System.IO.File.Move(strFilePath, strFilePath.Replace(Path.GetFileNameWithoutExtension(strFilePath), "closed_" + Path.GetFileNameWithoutExtension(strFilePath)));
+            drawTree();
+        }
+
     }
 }

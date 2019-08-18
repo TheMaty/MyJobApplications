@@ -76,6 +76,9 @@ namespace FollowUp
 
                     foreach (string dataFile in records)
                     {
+                        if (dataFile.Contains("closed_"))
+                            continue;
+
                         XDocument doc = XDocument.Load(dataFile);
 
                         foreach (var dm in doc.Descendants("jobActivity"))
@@ -98,7 +101,14 @@ namespace FollowUp
                     }
                     txtItems.SetPropertyThreadSafe(() => txtItems.SelectionStart, txtItems.Text.Length);
 
-                    Thread.Sleep(600000);
+                    int refreshIteration = 0;
+
+                    if(int.TryParse(ConfigurationManager.AppSettings["RefreshIteration"], out refreshIteration))
+                        Thread.Sleep(refreshIteration);
+                    else
+                        Thread.Sleep(600000);
+
+
                 }
             });
             thread.Start();

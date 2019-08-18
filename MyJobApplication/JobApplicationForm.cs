@@ -49,6 +49,10 @@ namespace MyJobApplication
             ds.InsertApplication(jb);
 
             MessageBox.Show("Record has been added successfully");
+
+            if (this.MdiParent.MdiChildren.Length > 0 && this.MdiParent.MdiChildren[0] is TreeViewForm)
+                ((TreeViewForm)this.MdiParent.MdiChildren[0]).drawTree();
+
             this.Close();
             
         }
