@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -57,6 +58,13 @@ namespace MyJobApplication
 
         private void JobActivityForm_Load(object sender, EventArgs e)
         {
+            //read activity type from AppConfig
+            string[] actTypes = ConfigurationManager.AppSettings["ActivityType"].Split(',');
+
+            //set activity type combobox
+            foreach (string str in actTypes)
+                cmbType.Items.Add(str);
+            
             AutoCompleteStringCollection dataRegarding = new AutoCompleteStringCollection();
             foreach (string str in ((TreeViewForm)this.MdiParent.MdiChildren[0]).Companies)
             {

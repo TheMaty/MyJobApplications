@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jobActivity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <activityDate>2019-08-19T23:34:14.3442334+01:00</activityDate>
+  <createdOn>2019-08-19T23:38:10.7150376+01:00</createdOn>
+  <modifiedOn>2019-08-19T23:38:10.7150376+01:00</modifiedOn>
+  <title>about sending Consent for the CV</title>
+  <body>Dear Muhammet Atalay,
+
+I can confirm that I would like B&amp;B Information Technologies Services Ltd. to represent me solely in relation to vacancies at:
+
+Dynamics C365 CRM Solution Architect - Role
+
+I can confirm that I have not sent my CV to, or been in contact with any of these companies. I can also confirm that I have not given any other agency permission to represent me at any of these companies.
+
+Regards,
+Mark Ozgur Twain</body>
+  <regarding>Dynamics 365 CE Solution Architects</regarding>
+  <contact>Muhammet Atalay</contact>
+  <type>E-Mail Message - B&amp;B Technologies</type>
+</jobActivity>

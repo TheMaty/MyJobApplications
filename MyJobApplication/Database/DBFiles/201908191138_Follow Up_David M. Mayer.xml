@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jobActivity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <activityDate>2019-08-19T23:38:29.6390246+01:00</activityDate>
+  <createdOn>2019-08-19T23:42:08.1820279+01:00</createdOn>
+  <modifiedOn>2019-08-19T23:42:08.1820279+01:00</modifiedOn>
+  <title>Job Application Verification requires. Call Mr David Tomorrow Morning @ 09:45 am</title>
+  <body>Tomrrow Task : It is necessary to call Mr. David to discuss daily rate.</body>
+  <regarding>MS Dynamics 365 CRM Business Analyst </regarding>
+  <contact>David M. Mayer</contact>
+  <type>Follow Up</type>
+</jobActivity>
