@@ -1,4 +1,6 @@
-﻿namespace MyJobApplication
+﻿using System.Configuration;
+
+namespace MyJobApplication
 {
     partial class JobActivityForm
     {
@@ -193,6 +195,13 @@
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(471, 21);
             this.cmbType.TabIndex = 110;
+            //read activity type from AppConfig
+            string[] actTypes = ConfigurationManager.AppSettings["ActivityType"].Split(',');
+
+            //set activity type combobox
+            foreach (string str in actTypes)
+                this.cmbType.Items.Add(str);
+
             // 
             // btnSave
             // 
