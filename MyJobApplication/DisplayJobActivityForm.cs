@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -19,6 +20,9 @@ namespace MyJobApplication
         public DisplayJobActivityForm()
         {
             InitializeComponent();
+            string[] jobActivityTypes = ConfigurationManager.AppSettings["ActivityType"].Split(',');
+            foreach(string str in jobActivityTypes)
+                cmbType.Items.Add(str);
         }
 
         private void DisplayJobActivityForm_Load(object sender, EventArgs e)

@@ -48,52 +48,58 @@
             // 
             // dateTimePickerModifiedOn
             // 
-            this.dateTimePickerModifiedOn.Location = new System.Drawing.Point(106, 88);
+            this.dateTimePickerModifiedOn.Location = new System.Drawing.Point(80, 72);
+            this.dateTimePickerModifiedOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerModifiedOn.Name = "dateTimePickerModifiedOn";
-            this.dateTimePickerModifiedOn.Size = new System.Drawing.Size(628, 22);
+            this.dateTimePickerModifiedOn.Size = new System.Drawing.Size(472, 20);
             this.dateTimePickerModifiedOn.TabIndex = 101;
             this.dateTimePickerModifiedOn.TabStop = false;
             // 
             // lblModifiedOn
             // 
             this.lblModifiedOn.AutoSize = true;
-            this.lblModifiedOn.Location = new System.Drawing.Point(5, 93);
+            this.lblModifiedOn.Location = new System.Drawing.Point(4, 76);
+            this.lblModifiedOn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModifiedOn.Name = "lblModifiedOn";
-            this.lblModifiedOn.Size = new System.Drawing.Size(84, 17);
+            this.lblModifiedOn.Size = new System.Drawing.Size(64, 13);
             this.lblModifiedOn.TabIndex = 102;
             this.lblModifiedOn.Text = "Modified On";
             // 
             // dateTimePickerCreatedOn
             // 
-            this.dateTimePickerCreatedOn.Location = new System.Drawing.Point(106, 50);
+            this.dateTimePickerCreatedOn.Location = new System.Drawing.Point(80, 41);
+            this.dateTimePickerCreatedOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerCreatedOn.Name = "dateTimePickerCreatedOn";
-            this.dateTimePickerCreatedOn.Size = new System.Drawing.Size(628, 22);
+            this.dateTimePickerCreatedOn.Size = new System.Drawing.Size(472, 20);
             this.dateTimePickerCreatedOn.TabIndex = 103;
             this.dateTimePickerCreatedOn.TabStop = false;
             // 
             // lblCreatedOn
             // 
             this.lblCreatedOn.AutoSize = true;
-            this.lblCreatedOn.Location = new System.Drawing.Point(5, 55);
+            this.lblCreatedOn.Location = new System.Drawing.Point(4, 45);
+            this.lblCreatedOn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCreatedOn.Name = "lblCreatedOn";
-            this.lblCreatedOn.Size = new System.Drawing.Size(81, 17);
+            this.lblCreatedOn.Size = new System.Drawing.Size(61, 13);
             this.lblCreatedOn.TabIndex = 104;
             this.lblCreatedOn.Text = "Created On";
             // 
             // lblActivityDate
             // 
             this.lblActivityDate.AutoSize = true;
-            this.lblActivityDate.Location = new System.Drawing.Point(5, 17);
+            this.lblActivityDate.Location = new System.Drawing.Point(4, 14);
+            this.lblActivityDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActivityDate.Name = "lblActivityDate";
-            this.lblActivityDate.Size = new System.Drawing.Size(86, 17);
+            this.lblActivityDate.Size = new System.Drawing.Size(67, 13);
             this.lblActivityDate.TabIndex = 105;
             this.lblActivityDate.Text = "Activity Date";
             // 
             // dateTimePickerAppliedOn
             // 
-            this.dateTimePickerAppliedOn.Location = new System.Drawing.Point(106, 12);
+            this.dateTimePickerAppliedOn.Location = new System.Drawing.Point(80, 10);
+            this.dateTimePickerAppliedOn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerAppliedOn.Name = "dateTimePickerAppliedOn";
-            this.dateTimePickerAppliedOn.Size = new System.Drawing.Size(628, 22);
+            this.dateTimePickerAppliedOn.Size = new System.Drawing.Size(472, 20);
             this.dateTimePickerAppliedOn.TabIndex = 106;
             this.dateTimePickerAppliedOn.TabStop = false;
             // 
@@ -101,73 +107,81 @@
             // 
             this.txtRegarding.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtRegarding.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtRegarding.Location = new System.Drawing.Point(106, 164);
+            this.txtRegarding.Location = new System.Drawing.Point(80, 133);
+            this.txtRegarding.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRegarding.Name = "txtRegarding";
             this.txtRegarding.ReadOnly = true;
-            this.txtRegarding.Size = new System.Drawing.Size(628, 22);
+            this.txtRegarding.Size = new System.Drawing.Size(472, 20);
             this.txtRegarding.TabIndex = 108;
             // 
             // txtContact
             // 
             this.txtContact.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtContact.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtContact.Location = new System.Drawing.Point(106, 202);
+            this.txtContact.Location = new System.Drawing.Point(80, 164);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtContact.Name = "txtContact";
             this.txtContact.ReadOnly = true;
-            this.txtContact.Size = new System.Drawing.Size(628, 22);
+            this.txtContact.Size = new System.Drawing.Size(472, 20);
             this.txtContact.TabIndex = 109;
             // 
             // lblContact
             // 
             this.lblContact.AutoSize = true;
-            this.lblContact.Location = new System.Drawing.Point(5, 207);
+            this.lblContact.Location = new System.Drawing.Point(4, 168);
+            this.lblContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(56, 17);
+            this.lblContact.Size = new System.Drawing.Size(44, 13);
             this.lblContact.TabIndex = 111;
             this.lblContact.Text = "Contact";
             // 
             // lblRegarding
             // 
             this.lblRegarding.AutoSize = true;
-            this.lblRegarding.Location = new System.Drawing.Point(5, 169);
+            this.lblRegarding.Location = new System.Drawing.Point(4, 137);
+            this.lblRegarding.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegarding.Name = "lblRegarding";
-            this.lblRegarding.Size = new System.Drawing.Size(74, 17);
+            this.lblRegarding.Size = new System.Drawing.Size(56, 13);
             this.lblRegarding.TabIndex = 112;
             this.lblRegarding.Text = "Regarding";
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(5, 247);
+            this.lblType.Location = new System.Drawing.Point(4, 201);
+            this.lblType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(40, 17);
+            this.lblType.Size = new System.Drawing.Size(31, 13);
             this.lblType.TabIndex = 114;
             this.lblType.Text = "Type";
             // 
             // lblBody
             // 
             this.lblBody.AutoSize = true;
-            this.lblBody.Location = new System.Drawing.Point(5, 280);
+            this.lblBody.Location = new System.Drawing.Point(4, 228);
+            this.lblBody.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBody.Name = "lblBody";
-            this.lblBody.Size = new System.Drawing.Size(40, 17);
+            this.lblBody.Size = new System.Drawing.Size(31, 13);
             this.lblBody.TabIndex = 115;
             this.lblBody.Text = "Body";
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(106, 126);
+            this.txtTitle.Location = new System.Drawing.Point(80, 102);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.ReadOnly = true;
             this.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTitle.Size = new System.Drawing.Size(628, 22);
+            this.txtTitle.Size = new System.Drawing.Size(472, 20);
             this.txtTitle.TabIndex = 107;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(5, 131);
+            this.lblTitle.Location = new System.Drawing.Point(4, 106);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(39, 17);
+            this.lblTitle.Size = new System.Drawing.Size(30, 13);
             this.lblTitle.TabIndex = 116;
             this.lblTitle.Text = "Title ";
             // 
@@ -175,33 +189,29 @@
             // 
             this.cmbType.Enabled = false;
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
-            "E-Mail Message - Gmail",
-            "E-Mail Message - B&B Technologies",
-            "E-Mail Message - Outlook",
-            "LinkedIn Message",
-            "Phone Call"});
-            this.cmbType.Location = new System.Drawing.Point(106, 240);
+            this.cmbType.Location = new System.Drawing.Point(80, 195);
+            this.cmbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(627, 24);
+            this.cmbType.Size = new System.Drawing.Size(471, 21);
             this.cmbType.TabIndex = 110;
             // 
             // txtBody
             // 
-            this.txtBody.Location = new System.Drawing.Point(106, 280);
+            this.txtBody.Location = new System.Drawing.Point(80, 228);
+            this.txtBody.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBody.Name = "txtBody";
             this.txtBody.ReadOnly = true;
-            this.txtBody.Size = new System.Drawing.Size(628, 483);
+            this.txtBody.Size = new System.Drawing.Size(472, 393);
             this.txtBody.TabIndex = 119;
             this.txtBody.Text = "";
             // 
             // DisplayJobActivityForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(735, 775);
+            this.ClientSize = new System.Drawing.Size(564, 630);
             this.ControlBox = false;
             this.Controls.Add(this.txtBody);
             this.Controls.Add(this.cmbType);
@@ -219,6 +229,7 @@
             this.Controls.Add(this.lblCreatedOn);
             this.Controls.Add(this.lblActivityDate);
             this.Controls.Add(this.dateTimePickerAppliedOn);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DisplayJobActivityForm";

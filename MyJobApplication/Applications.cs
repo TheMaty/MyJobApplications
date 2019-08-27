@@ -32,6 +32,11 @@ namespace MyJobApplication
 
             switch (columnindex)
             {
+                case 4: // URL
+                    DisplayURLForm DisplayURLForm = new DisplayURLForm();
+                    DisplayURLForm.URL = listViewApplications.SelectedItems[0].SubItems[columnindex].Text;
+                    DisplayURLForm.ShowDialog(this);
+                    break;
                 case 5: // Body of Advertisement
                     DisplayBodyForm DisplayBodyForm = new DisplayBodyForm();
                     DisplayBodyForm.Body = listViewApplications.SelectedItems[0].SubItems[columnindex].Text;
