@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -53,6 +54,22 @@ namespace FollowUp
     {
         private string dbFilePath => ConfigurationManager.AppSettings["DBFile"];
 
+        private static int WM_QUERYENDSESSION = 0x11;
+        private static bool systemShutdown = false;
+        protected override void WndProc(ref System.Windows.Forms.Message m)
+        {
+            if (m.Msg == WM_QUERYENDSESSION)
+            {
+                //MessageBox.Show("queryendsession: this is a logoff, shutdown, or reboot");
+                systemShutdown = true;
+            }
+
+            // If this is WM_QUERYENDSESSION, the closing event should be  
+            // raised in the base WndProc.  
+            base.WndProc(ref m);
+
+        } //WndProc   
+
         public FollowUpForm()
         {
             InitializeComponent();
@@ -65,14 +82,15 @@ namespace FollowUp
 
         private void FollowUpForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            if (!systemShutdown)
+                e.Cancel = true;
         }
 
 
         private void Start()
         {
             Thread thread = new Thread(() => {
-                while (true)
+                while (!systemShutdown)
                 {
                     //Clean the screen
                     txtItems.SetPropertyThreadSafe(() => txtItems.Text, string.Empty);
@@ -115,6 +133,8 @@ namespace FollowUp
 
 
                 }
+
+                this.Close();
             });
             thread.Start();
         }
