@@ -72,13 +72,14 @@ namespace MyJobApplication
             
             foreach (string dataFile in records)
             {
-
-                XDocument doc = XDocument.Load(dataFile);
-
-                foreach (var dm in doc.Descendants("jobApplication"))
+                if (System.IO.File.Exists(dataFile))
                 {
-                    ListViewItem item = new ListViewItem(new string[]
+                    XDocument doc = XDocument.Load(dataFile);
+
+                    foreach (var dm in doc.Descendants("jobApplication"))
                     {
+                        ListViewItem item = new ListViewItem(new string[]
+                        {
                         dm.Element("applicationDate").Value, //automatic value ! if error occurs,system must throw an exception even poor performance happens.
                         dm.Element("company")!=null?dm.Element("company").Value:"",
                         dm.Element("advertiser")!=null?dm.Element("advertiser").Value:"",
@@ -87,8 +88,9 @@ namespace MyJobApplication
                         dm.Element("advertisement")!=null?dm.Element("advertisement").Value:"",
                         dm.Element("AppliedCVBinary")!=null?dm.Element("AppliedCVBinary").Value:"",
 
-                    });
-                    listViewApplications.Items.Add(item);
+                        });
+                        listViewApplications.Items.Add(item);
+                    }
                 }
             }
         }

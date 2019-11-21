@@ -83,10 +83,13 @@ namespace MyJobApplication
             {
                 foreach(string record in records)
                 {
-                    XDocument doc = XDocument.Load(record);
+                    if (File.Exists(record))
+                    {
+                        XDocument doc = XDocument.Load(record);
 
-                    if (!doc.ToString().Contains(key))
-                        results.Remove(record);
+                        if (!doc.ToString().Contains(key))
+                            results.Remove(record);
+                    }
                 }
             }
 
